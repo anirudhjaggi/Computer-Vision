@@ -10,7 +10,7 @@ detector = htm.handDetector()
 while True:
     success, img = cap.read()
     img = detector.findHands(img)
-    lmList = detector.findPosition(img, draw=False) # Toggle draw=True means custom color scheme,or =False means default connection colours
+    lmList = detector.findPosition(img, draw=False) #Toggle draw=True means custom color scheme,or =False means default connection colours
     if len(lmList) != 0:
         print(lmList[4])
 
