@@ -55,6 +55,8 @@ def main():
     detector = handDetector(landmark_color=(0, 0, 255), connection_color=(0, 255, 0))
     while True:
         success, img = cap.read()
+        if not success:
+            break
         img = detector.findHands(img)
         lmList = detector.findPosition(img)
         if len(lmList) != 0:

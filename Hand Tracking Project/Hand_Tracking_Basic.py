@@ -16,6 +16,8 @@ cTime = 0  # current time
 
 while True:
     success, img = cap.read()
+    if not success:
+        break
     imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     results = hands.process(imgRGB)
     # print(results.multi_hand_landmarks)

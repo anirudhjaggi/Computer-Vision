@@ -9,6 +9,8 @@ cap = cv2.VideoCapture(0)
 detector = htm.handDetector()
 while True:
     success, img = cap.read()
+    if not success:
+        break
     img = detector.findHands(img)
     lmList = detector.findPosition(img, draw=False) #Toggle draw=True means custom color scheme,or =False means default connection colours
     if len(lmList) != 0:
